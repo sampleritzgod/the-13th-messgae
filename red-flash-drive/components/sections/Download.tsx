@@ -1,12 +1,13 @@
 "use client";
 
 import Reveal from "@/components/ui/Reveal";
+import { printScreenplay } from "@/lib/printScreenplay";
 
 export default function Download() {
   const handleDownload = () => {
-    // Opens the browser print dialog → "Save as PDF".
-    // Print styles in globals.css isolate the screenplay for a clean export.
-    window.print();
+    // Builds a standalone, screenplay-only document in an isolated iframe and
+    // prints that — so the export contains ONLY the script, never the website.
+    printScreenplay();
   };
 
   return (

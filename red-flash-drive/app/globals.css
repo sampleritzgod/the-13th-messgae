@@ -65,28 +65,13 @@ body {
   }
 }
 
-/* ---------- Print / Download as PDF ---------- */
+/* ---------- Print helpers ----------
+   The "Download Screenplay PDF" button renders a clean, screenplay-only
+   document in an isolated iframe (see lib/printScreenplay.ts), so the full
+   website is never part of the export. The rule below only hides chrome if a
+   user manually triggers the browser print on the page itself. */
 @media print {
-  body {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
   .no-print {
     display: none !important;
-  }
-  .print-screenplay,
-  .print-screenplay * {
-    visibility: visible;
-  }
-  .print-screenplay {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    color: #000 !important;
-  }
-  .screenplay-scene {
-    page-break-inside: avoid;
-    border: none !important;
-    background: #fff !important;
   }
 }
