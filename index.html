@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE 13TH MESSAGE — Official Site</title>
+  <meta name="description" content="The message arrived before the crime. THE 13TH MESSAGE — an action-thriller short film." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            ink: '#05070d',
+            panel: '#0a0e17',
+            accent: '#3b82f6',
+            'accent-soft': '#60a5fa',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+          animation: {
+            fadeUp: 'fadeUp 0.8s ease-out forwards',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { background-color: #05070d; }
+    ::selection { background: #3b82f6; color: #fff; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #05070d; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .text-glow { text-shadow: 0 0 40px rgba(59, 130, 246, 0.35); }
+
+    .grain::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body class="font-sans text-slate-200 antialiased selection:bg-accent overflow-x-hidden">
+
+  <!-- ====================== NAV ====================== -->
+  <header class="fixed top-0 inset-x-0 z-50 transition-all duration-300" id="nav">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+      <a href="#hero" class="font-display text-xl tracking-[0.2em] text-white">
+        THE 13<span class="text-accent">TH</span> MESSAGE
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <li><a href="#story" class="hover:text-white transition-colors">Story</a></li>
+        <li><a href="#cast" class="hover:text-white transition-colors">Cast</a></li>
+        <li><a href="#timeline" class="hover:text-white transition-colors">Timeline</a></li>
+        <li><a href="#gallery" class="hover:text-white transition-colors">Gallery</a></li>
+        <li><a href="#trailer" class="hover:text-white transition-colors">Trailer</a></li>
+      </ul>
+      <a href="#trailer" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-white border border-white/15 rounded-full px-5 py-2 hover:border-accent hover:bg-accent/10 transition-all">
+        Watch Trailer
+      </a>
+    </nav>
+  </header>
+
+  <!-- ====================== HERO ====================== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center grain overflow-hidden">
+    <!-- Background gradient + glow -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-ink via-[#070b14] to-ink"></div>
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] bg-accent/10 rounded-full blur-[140px]"></div>
+      <div class="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-ink to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <p class="animate-fadeUp text-accent-soft tracking-[0.5em] text-xs sm:text-sm font-semibold mb-6 uppercase">
+        An Action-Thriller Short Film
+      </p>
+
+      <h1 class="animate-fadeUp font-display leading-[0.9] text-white text-glow text-6xl sm:text-8xl lg:text-[10rem]">
+        THE 13<span class="text-accent">TH</span><br class="sm:hidden" /> MESSAGE
+      </h1>
+
+      <p class="animate-fadeUp mt-8 text-lg sm:text-2xl text-slate-300 font-light italic max-w-2xl mx-auto">
+        “The message arrived before the crime.”
+      </p>
+
+      <div class="animate-fadeUp mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#trailer"
+           class="group inline-flex items-center gap-3 bg-accent hover:bg-accent-soft text-white font-semibold px-8 py-4 rounded-full transition-all shadow-lg shadow-accent/30 hover:shadow-accent/50">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          Watch Trailer
+        </a>
+        <a href="#story" class="inline-flex items-center gap-2 text-slate-300 hover:text-white font-medium px-6 py-4 transition-colors">
+          Read the Story
+        </a>
+      </div>
+
+      <div class="animate-fadeUp mt-16 flex items-center justify-center gap-6 text-xs text-slate-500 tracking-widest uppercase">
+        <span>Thriller</span><span class="w-1 h-1 rounded-full bg-slate-600"></span>
+        <span>2026</span><span class="w-1 h-1 rounded-full bg-slate-600"></span>
+        <span>4K</span>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <a href="#story" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-slate-500 hover:text-white transition-colors">
+      <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </a>
+  </section>
+
+  <!-- ====================== STORY ====================== -->
+  <section id="story" class="relative py-28 lg:py-36 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="reveal text-accent-soft tracking-[0.4em] text-xs font-semibold uppercase mb-5">The Story</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl text-white mb-10">Twelve warnings. One left.</h2>
+      <div class="reveal space-y-6 text-lg text-slate-400 leading-relaxed font-light">
+        <p>
+          Detective Mara Vance has spent six months tracking a killer who never strikes without warning.
+          Each crime is preceded by an anonymous message — a cryptic line, a countdown, a name.
+          Twelve messages. Twelve victims. Every prediction, exact.
+        </p>
+        <p>
+          Then the thirteenth message arrives. But this time the name on the screen is her own.
+          With seventy-two hours on the clock and a department that no longer trusts her,
+          Mara must decode a pattern that seems to know her better than she knows herself —
+          before the final message becomes a confession written in her blood.
+        </p>
+        <p class="text-slate-300">
+          Some messages predict the future. This one was meant to end it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== CAST ====================== -->
+  <section id="cast" class="relative py-24 lg:py-32 px-6 bg-panel/40">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="reveal text-accent-soft tracking-[0.4em] text-xs font-semibold uppercase mb-5">The Cast</p>
+        <h2 class="reveal font-display text-4xl sm:text-6xl text-white">Faces of the Hunt</h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+        <!-- Card -->
+        <article class="reveal group glass rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-300">
+          <div class="aspect-[3/4] bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
+            <svg class="w-16 h-16 text-slate-700 group-hover:text-accent/50 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg>
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="font-semibold text-white">Elena Cross</h3>
+            <p class="text-sm text-slate-400 mt-1">Det. Mara Vance</p>
+          </div>
+        </article>
+
+        <article class="reveal group glass rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-300" style="transition-delay:60ms">
+          <div class="aspect-[3/4] bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
+            <svg class="w-16 h-16 text-slate-700 group-hover:text-accent/50 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg>
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="font-semibold text-white">Julian Reyes</h3>
+            <p class="text-sm text-slate-400 mt-1">The Messenger</p>
+          </div>
+        </article>
+
+        <article class="reveal group glass rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-300" style="transition-delay:120ms">
+          <div class="aspect-[3/4] bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
+            <svg class="w-16 h-16 text-slate-700 group-hover:text-accent/50 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg>
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="font-semibold text-white">Naomi Park</h3>
+            <p class="text-sm text-slate-400 mt-1">Capt. Iris Hale</p>
+          </div>
+        </article>
+
+        <article class="reveal group glass rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-300" style="transition-delay:180ms">
+          <div class="aspect-[3/4] bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
+            <svg class="w-16 h-16 text-slate-700 group-hover:text-accent/50 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg>
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="font-semibold text-white">Marcus Vale</h3>
+            <p class="text-sm text-slate-400 mt-1">Agent Dorian Webb</p>
+          </div>
+        </article>
+
+        <article class="reveal group glass rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-300 col-span-2 md:col-span-1" style="transition-delay:240ms">
+          <div class="aspect-[3/4] bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
+            <svg class="w-16 h-16 text-slate-700 group-hover:text-accent/50 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg>
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="font-semibold text-white">Sofia Lin</h3>
+            <p class="text-sm text-slate-400 mt-1">Dr. Evelyn Shaw</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== TIMELINE ====================== -->
+  <section id="timeline" class="relative py-28 lg:py-36 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-20">
+        <p class="reveal text-accent-soft tracking-[0.4em] text-xs font-semibold uppercase mb-5">The Sequence</p>
+        <h2 class="reveal font-display text-4xl sm:text-6xl text-white">72 Hours to Decode</h2>
+      </div>
+
+      <div class="relative">
+        <!-- vertical line -->
+        <div class="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent/60 via-accent/20 to-transparent"></div>
+
+        <div class="space-y-12">
+          <!-- Item -->
+          <div class="reveal relative flex items-start sm:items-center gap-6 sm:gap-0">
+            <div class="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-accent ring-4 ring-accent/20 z-10"></div>
+            <div class="ml-12 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+              <span class="text-accent-soft text-xs font-semibold tracking-widest uppercase">Phase 01</span>
+              <h3 class="font-display text-2xl sm:text-3xl text-white mt-1">Message Received</h3>
+              <p class="text-slate-400 mt-2 font-light">An encrypted line lands on Mara's screen at 3:13 AM. No sender. No trace. Only a countdown.</p>
+            </div>
+            <div class="hidden sm:block sm:w-1/2"></div>
+          </div>
+
+          <!-- Item -->
+          <div class="reveal relative flex items-start sm:items-center gap-6 sm:gap-0">
+            <div class="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-accent ring-4 ring-accent/20 z-10"></div>
+            <div class="hidden sm:block sm:w-1/2"></div>
+            <div class="ml-12 sm:ml-0 sm:w-1/2 sm:pl-12">
+              <span class="text-accent-soft text-xs font-semibold tracking-widest uppercase">Phase 02</span>
+              <h3 class="font-display text-2xl sm:text-3xl text-white mt-1">Investigation Begins</h3>
+              <p class="text-slate-400 mt-2 font-light">Twelve cold cases reopen. A pattern emerges in the static — and it points inward.</p>
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="reveal relative flex items-start sm:items-center gap-6 sm:gap-0">
+            <div class="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-accent ring-4 ring-accent/20 z-10"></div>
+            <div class="ml-12 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right">
+              <span class="text-accent-soft text-xs font-semibold tracking-widest uppercase">Phase 03</span>
+              <h3 class="font-display text-2xl sm:text-3xl text-white mt-1">The Chase</h3>
+              <p class="text-slate-400 mt-2 font-light">A city under rain. A killer one step ahead. Every choice she makes was predicted hours ago.</p>
+            </div>
+            <div class="hidden sm:block sm:w-1/2"></div>
+          </div>
+
+          <!-- Item -->
+          <div class="reveal relative flex items-start sm:items-center gap-6 sm:gap-0">
+            <div class="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-accent ring-4 ring-accent/20 z-10"></div>
+            <div class="hidden sm:block sm:w-1/2"></div>
+            <div class="ml-12 sm:ml-0 sm:w-1/2 sm:pl-12">
+              <span class="text-accent-soft text-xs font-semibold tracking-widest uppercase">Phase 04</span>
+              <h3 class="font-display text-2xl sm:text-3xl text-white mt-1">The Revelation</h3>
+              <p class="text-slate-400 mt-2 font-light">The thirteenth message decrypts. The truth isn't who sent it — but why it was always meant for her.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== GALLERY ====================== -->
+  <section id="gallery" class="relative py-24 lg:py-32 px-6 bg-panel/40">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="reveal text-accent-soft tracking-[0.4em] text-xs font-semibold uppercase mb-5">The Gallery</p>
+        <h2 class="reveal font-display text-4xl sm:text-6xl text-white">Stills from the Edge</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[16rem]">
+        <figure class="reveal group relative rounded-2xl overflow-hidden glass lg:row-span-2 lg:row-end-auto">
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-ink"></div>
+          <div class="absolute inset-0 flex items-center justify-center text-slate-700 group-hover:text-accent/40 transition-colors">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4 16l4.5-6 3.5 4.5L15 11l5 5M4 6h16v12H4z"/></svg>
+          </div>
+          <figcaption class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-ink to-transparent text-sm text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">3:13 AM</figcaption>
+        </figure>
+
+        <figure class="reveal group relative rounded-2xl overflow-hidden glass" style="transition-delay:80ms">
+          <div class="absolute inset-0 bg-gradient-to-tr from-slate-900 via-slate-800 to-ink"></div>
+          <div class="absolute inset-0 flex items-center justify-center text-slate-700 group-hover:text-accent/40 transition-colors">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4 16l4.5-6 3.5 4.5L15 11l5 5M4 6h16v12H4z"/></svg>
+          </div>
+          <figcaption class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-ink to-transparent text-sm text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">The Precinct</figcaption>
+        </figure>
+
+        <figure class="reveal group relative rounded-2xl overflow-hidden glass" style="transition-delay:160ms">
+          <div class="absolute inset-0 bg-gradient-to-bl from-slate-800 via-ink to-slate-900"></div>
+          <div class="absolute inset-0 flex items-center justify-center text-slate-700 group-hover:text-accent/40 transition-colors">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4 16l4.5-6 3.5 4.5L15 11l5 5M4 6h16v12H4z"/></svg>
+          </div>
+          <figcaption class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-ink to-transparent text-sm text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">Rain & Neon</figcaption>
+        </figure>
+
+        <figure class="reveal group relative rounded-2xl overflow-hidden glass sm:col-span-2 lg:col-span-1" style="transition-delay:240ms">
+          <div class="absolute inset-0 bg-gradient-to-tr from-ink via-slate-900 to-slate-800"></div>
+          <div class="absolute inset-0 flex items-center justify-center text-slate-700 group-hover:text-accent/40 transition-colors">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4 16l4.5-6 3.5 4.5L15 11l5 5M4 6h16v12H4z"/></svg>
+          </div>
+          <figcaption class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-ink to-transparent text-sm text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">The Decryption</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== TRAILER ====================== -->
+  <section id="trailer" class="relative py-28 lg:py-36 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="reveal text-accent-soft tracking-[0.4em] text-xs font-semibold uppercase mb-5">Official Trailer</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl text-white mb-12">Watch the First Look</h2>
+
+      <div class="reveal group relative rounded-3xl overflow-hidden glass aspect-video cursor-pointer">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-ink to-slate-900"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-accent/15 rounded-full blur-3xl"></div>
+
+        <!-- Play button -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center gap-6">
+          <button aria-label="Play trailer" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-accent/90 group-hover:bg-accent flex items-center justify-center shadow-2xl shadow-accent/40 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-9 h-9 text-white translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <span class="text-slate-400 text-sm tracking-widest uppercase">02:14 · 4K</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== FINAL CTA ====================== -->
+  <section class="relative py-32 lg:py-44 px-6 grain overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] bg-accent/10 rounded-full blur-[120px]"></div>
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <h2 class="reveal font-display text-4xl sm:text-7xl text-white leading-tight text-glow">
+        Some messages should<br />never be opened.
+      </h2>
+      <p class="reveal mt-8 text-slate-400 text-lg font-light">In theaters and streaming — Winter 2026.</p>
+      <div class="reveal mt-12">
+        <a href="#trailer"
+           class="group inline-flex items-center gap-3 bg-accent hover:bg-accent-soft text-white font-semibold px-10 py-4 rounded-full transition-all shadow-lg shadow-accent/30 hover:shadow-accent/50">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          Watch Trailer
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <a href="#hero" class="font-display text-lg tracking-[0.2em] text-white">
+        THE 13<span class="text-accent">TH</span> MESSAGE
+      </a>
+      <p class="text-sm text-slate-500">© 2026 Thirteenth Frame Pictures. All rights reserved.</p>
+      <div class="flex gap-6 text-sm text-slate-500">
+        <a href="#" class="hover:text-white transition-colors">Privacy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms</a>
+        <a href="#" class="hover:text-white transition-colors">Press</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav background on scroll
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      if (window.scrollY > 24) {
+        nav.classList.add('bg-ink/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+      } else {
+        nav.classList.remove('bg-ink/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
